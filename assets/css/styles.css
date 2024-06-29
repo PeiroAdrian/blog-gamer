@@ -6,6 +6,8 @@
     --color-border-list: rgba(255, 255, 255, 0.3);
     --color-hover-sublist-item: rgba(0, 0, 0, 0.05);
     --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-bg-marquee: #EEEEEE;
+    --color-text-marquee: #7C7C7C;
 } 
 
 /*ESTILOS GENERALES*/
@@ -259,18 +261,18 @@ body{
 }
 
 .carousel__menu--small > .carousel__item{
-    flex-basis: auto;
+    flex-basis: 25%;
 }
 
 .carousel__container-img{
     position: relative;
-    width: calc(100% - 3.5rem);
+    width: calc(100% + 3.5rem);
     height: 35rem;
     overflow: hidden;
 }
 
 .carousel__img{
-    width: 100%;
+    width: auto;
     height: 100%;
 }
 
@@ -292,7 +294,8 @@ body{
     text-align: center;
 }
 
-.container-rating__circle{
+.container-rating__circle,
+.rating__circle{
     width: 100%;
     height: 100%;
     padding: 0.2rem;
@@ -300,7 +303,8 @@ body{
     background-color: var(--color-secondary);
 }
 
-.container-rating__border{
+.container-rating__border,
+.rating__border{
     width: 100%;
     height: 100%;
     border-radius: 3.2rem;
@@ -310,20 +314,177 @@ body{
     align-items: center;
 }
 
-.container-rating__mark{
+.container-rating__mark,
+.rating__mark{
     font-weight: 700;
     color: var(--color-principal);
+}
 
+.carousel__link{
+    color: var(--color-principal);
+    background-color: var(--color-shadow);
+    font-size: 1.7rem;
+    text-shadow: 1px 1px 3px black;
+    transition: all 300ms ease-out;
+}
+
+.carousel__title:hover > .carousel__link{
+    background-color: var(--color-secondary);
 }
 
 /*ESTILOS MARQUESINA MARQUEE*/
 .layout__marquee{
     grid-area: marquee;
+
+    width: 100%;
+    height: 3.5rem;
+    min-height: 3.5rem;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    background-color: var(--color-bg-marquee);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.marquee__container{
+    display: flex;
+    overflow: hidden;
+}
+
+.marquee__header{
+    position: relative;
+    z-index: 5;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--color-principal);
+    background-color: var(--color-secondary);
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+.marquee__list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10rem;
+}
+
+.marquee__item:first-child{
+    margin-left: 10rem;
+}
+
+.marquee__title{
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.marquee__link{
+    color: var(--color-text-marquee);
+}
+
+.marquee__link:hover{
+    color: var(--color-secondary);
+}
+
+.marquee__link::before{
+    content: '+ ';
+    color: var(--color-secondary);
 }
 
 /*ESTILOS DEL SLIDER*/
 .layout__slider{
     grid-area: slider;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    display: grid;
+    grid-template-areas: 
+        "slider1 slider3 slider3 slider4" 
+         "slider2 slider3 slider3 slider5"
+    ;
+    row-gap: 0.3rem;
+    column-gap: 0.3rem;
+}
+
+.slider__container--slider1{
+    grid-area: slider1;
+}
+
+.slider__container--slider2{
+    grid-area: slider2;
+}
+
+.slider__container--slider3{
+    grid-area: slider3;
+}
+
+.slider__container--slider4{
+    grid-area: slider4;
+}
+
+.slider__container--slider5{
+    grid-area: slider5;
+}
+
+.slider__container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider__img{
+    width: 100%;
+    transition: all 300ms ease-out;
+}
+
+.slider__container:hover .slider__img{
+    transform: scale(1.1);
+}
+
+.slider__info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    color: var(--color-principal);
+}
+
+.slider__category{
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px var(--color-bg-navbar);
+}
+
+.slider__line{
+    width: 4rem;
+    height: 0.2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    background-color: var(--color-secondary);
+}
+
+.slider__link-title{
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px var(--color-bg-navbar);
+    color: var(--color-principal);
+    text-transform: uppercase;
+}
+
+.slider__rating{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 /*ESTILOS MEJORES MOMENTOS HIGHLIGHTS*/
