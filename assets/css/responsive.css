@@ -27,6 +27,10 @@
     ;
     }
 
+    .layout__main{
+        margin-right: 0rem;
+    }
+
     /*CABECERA*/
     .layout__header{
         display: flex;
@@ -229,5 +233,115 @@
 }
 
 @media (max-width: 592px){
+    /*LAOYUT*/
+    .layout{
+        width: 35%;
+        min-width: 35rem;
+        margin: 0 auto;
+    }
+
+    /*SLIDER*/
+    .layout__slider{
+        grid-template-areas: 
+            "slider1 slider1 slider1 slider1" 
+             "slider2 slider2 slider2 slider2"
+             "slider3 slider3 slider3 slider3"
+             "slider4 slider4 slider4 slider4"
+        ;
+        column-gap: 0;
+        grid-template-columns: 100%;
+    }
+
+    .slider__container--slider2{
+        width: 100%;
+        height: auto;
+    }
+
+    .slider__container--slider3{
+        width: 100%;
+        height: auto;
+    }
+
+    .slider__container--slider5{
+        width: 100%;
+        height: auto;
+    }
+
+    /*MEJORES MOMENTOS*/
+    .highlights__posts{
+        flex-direction: row;
+    }
+
+    .highlights__post{
+        width: 100%;
+    }
+
+    /*VIDEOS*/
+    .videos__list{
+        flex-direction: column;
+    }
+
+    .videos__video{
+        width: 100%;
+    }
+
+    .main-video__yt-video{
+        height: 20rem;
+    }
+
+    /*CARRUSEL*/
+    .carousel-games__item--hidden-small{
+        display: none;
+    }
+
+    /*NOTICIAS*/
+    .news__main-post{
+        flex-direction: column;
+    }
+
+    /*JUEGOS*/
+    .news__list{
+        flex-direction: column;
+    }
+
+    .games__game{
+        width: 100%;
+    }
+
+    /*POSTS*/
+    .posts__container{
+        flex-direction: column;
+    }
+
+    .posts__post{
+        flex-basis: 100%;
+    }
+
+    .post__img{
+        width: 100%;
+    }
+
+    /*PIE DE PAGINA*/
+    .footer__container{
+        width: 30%;
+        min-width: 30rem;
+    }
+
+    .footer__text{
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px){
+    .layout{
+        width: 100%;
+        min-width: auto;
+        margin: 0;
+    }
     
+    .footer_container{
+        width: 100%;
+        min-width: auto;
+        margin: 0;
+    }
 }
